@@ -43,4 +43,5 @@ A fully functional, front-end only Food Delivery Platform built using pure HTML,
 - `tracking.html` - The live order tracking interface.
 - `styles/` - Contains separated CSS files for each HTML page (`global.css`, `index.css`, `cart.css`, etc.).
 - `scripts/app.js` - Contains the mock data, application logic, and state management.
-- `images/` - Directory for all image assets.
+- `images/` - Directory for all photography and menu image assets.
+- `icons/` - Directory for all extracted SVG UI icons.
