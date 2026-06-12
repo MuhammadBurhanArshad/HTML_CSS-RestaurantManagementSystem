@@ -18,19 +18,18 @@ A fully functional, front-end only Food Delivery Platform built using pure HTML,
 
 ## Screenshots
 
-*(Paste your screenshot images in the `images` folder and update the filenames below if necessary)*
-
 ### Home Page
-![Home Page Screenshot](images/screenshot-home.png)
+<img width="1349" height="1073" alt="image" src="https://github.com/user-attachments/assets/90e4d603-8961-4843-8f31-c621417f6bdc" />
+<img width="1364" height="651" alt="image" src="https://github.com/user-attachments/assets/3c09c9e1-2b59-494d-bf39-f2af5218cf20" />
 
 ### Cart Page
-![Cart Page Screenshot](images/screenshot-cart.png)
+<img width="1364" height="651" alt="image" src="https://github.com/user-attachments/assets/7c063b17-6fa4-4e04-8473-d34e27522d03" />
 
 ### Order Tracking
-![Tracking Page Screenshot](images/screenshot-tracking.png)
+<img width="1349" height="1137" alt="image" src="https://github.com/user-attachments/assets/a9210094-e7b5-4559-9948-c85599e96130" />
 
 ### Order History
-![History Page Screenshot](images/screenshot-history.png)
+<img width="1349" height="785" alt="image" src="https://github.com/user-attachments/assets/6b89d6fc-5e07-4838-b580-c1bd522f8959" />
 
 ## Installation & Usage
 1. Clone or download this repository.
