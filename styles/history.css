@@ -1,0 +1,107 @@
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.history-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #edf2f7;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  border-color: #ff4b2b;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-id {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.order-date {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.order-items {
+  font-size: 0.95rem;
+}
+
+.order-status-total {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #1a1a2e;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-processing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.reorder-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #ff4b2b;
+  color: #ff4b2b;
+  background: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reorder-btn:hover {
+  background: #ff4b2b;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .history-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+  .order-status-total {
+      text-align: left;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .reorder-btn {
+      margin-top: 0;
+  }
+}
