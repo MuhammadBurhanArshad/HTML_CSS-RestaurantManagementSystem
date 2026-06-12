@@ -85,10 +85,9 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.timeline-icon svg {
+.timeline-icon img {
   width: 16px;
   height: 16px;
-  color: #edf2f7;
 }
 
 .timeline-item.active .timeline-icon {
@@ -96,8 +95,8 @@
   background: #ff4b2b;
 }
 
-.timeline-item.active .timeline-icon svg {
-  color: #ffffff;
+.timeline-item.active .timeline-icon img {
+  filter: invert(1) grayscale(1) brightness(200%);
 }
 
 .timeline-content {
