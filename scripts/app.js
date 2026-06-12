@@ -1,5 +1,3 @@
-// --- Global Image Fallback ---
-// Automatically replaces any broken or missing image with a consistent placeholder
 document.addEventListener('error', function(e) {
   if (e.target.tagName && e.target.tagName.toLowerCase() === 'img') {
       if (e.target.src !== 'https://placehold.co/600x400/eeeeee/718096?text=Placeholder') {
@@ -8,7 +6,6 @@ document.addEventListener('error', function(e) {
   }
 }, true);
 
-// --- Mock Data ---
 const restaurants = [
   {
       id: 1,
@@ -68,11 +65,9 @@ const restaurants = [
   }
 ];
 
-// --- State Management ---
 let cart = JSON.parse(localStorage.getItem('craveCart')) || [];
 let activeCategory = "All";
 
-// --- Utility Functions ---
 function saveCart() {
   localStorage.setItem('craveCart', JSON.stringify(cart));
   updateCartCount();
@@ -94,10 +89,9 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 3500);
 }
 
-// --- Init Shared Elements ---
+
 updateCartCount();
 
-// --- Page: Index (Restaurants) ---
 const restaurantGrid = document.getElementById('restaurantGrid');
 if (restaurantGrid) {
   const searchInput = document.getElementById('searchInput');
@@ -139,7 +133,7 @@ if (restaurantGrid) {
       });
   }
 
-  // Filters
+
   filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
           filterBtns.forEach(b => b.classList.remove('active'));
@@ -156,7 +150,6 @@ if (restaurantGrid) {
   renderRestaurants();
 }
 
-// --- Modal Logic ---
 const modal = document.getElementById('restaurantModal');
 if (modal) {
   const closeModalBtn = document.getElementById('closeModalBtn');
@@ -220,7 +213,6 @@ function addToCart(restaurantId, restaurantName, item) {
   showToast(`Added ${item.name} to cart`);
 }
 
-// --- Page: Cart ---
 const cartContainer = document.getElementById('cartContainer');
 if (cartContainer) {
   const cartItemsList = document.getElementById('cartItemsList');
@@ -293,7 +285,7 @@ if (cartContainer) {
       checkoutBtn.addEventListener('click', () => {
           if(cart.length === 0) return;
           
-          // Create an order
+
           const orders = JSON.parse(localStorage.getItem('craveOrders')) || [];
           const newOrder = {
               id: 'ORD-' + Math.floor(Math.random() * 1000000),
@@ -305,10 +297,10 @@ if (cartContainer) {
           orders.unshift(newOrder);
           localStorage.setItem('craveOrders', JSON.stringify(orders));
           
-          // Set as active tracking
+
           localStorage.setItem('craveActiveOrder', JSON.stringify(newOrder));
           
-          // Clear cart
+
           cart = [];
           saveCart();
           
@@ -322,7 +314,6 @@ if (cartContainer) {
   renderCart();
 }
 
-// --- Page: History ---
 const historyList = document.getElementById('historyList');
 if (historyList) {
   const orders = JSON.parse(localStorage.getItem('craveOrders')) || [];
@@ -356,13 +347,12 @@ if (historyList) {
   }
 }
 
-// --- Page: Tracking ---
 const trackingContent = document.getElementById('trackingContent');
 if (trackingContent) {
   const activeOrder = JSON.parse(localStorage.getItem('craveActiveOrder'));
   
   if (!activeOrder) {
-      // Show empty state natively inside HTML
+
   } else {
       document.getElementById('noActiveOrder').style.display = 'none';
       
@@ -373,8 +363,8 @@ if (trackingContent) {
           { id: 'delivered', title: 'Delivered', desc: 'Enjoy your food!', icon: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' }
       ];
 
-      // Simulate progression
-      let currentStep = 1; // 0: accepted, 1: preparing, etc.
+      
+      let currentStep = 1; 
       
       trackingContent.innerHTML = `
           <h2>Order ${activeOrder.id}</h2>
@@ -423,13 +413,13 @@ if (trackingContent) {
           window.location.reload();
       }
 
-      // Simulate movement every 10 seconds
+
       setInterval(() => {
           if(currentStep < 3) {
               currentStep++;
               renderTimeline();
               if(currentStep === 3) {
-                  // update order history
+
                   const orders = JSON.parse(localStorage.getItem('craveOrders')) || [];
                   const o = orders.find(x => x.id === activeOrder.id);
                   if(o) {
