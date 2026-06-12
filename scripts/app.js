@@ -84,7 +84,7 @@ function showToast(message) {
   if (!container) return;
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> ${message}`;
+  toast.innerHTML = `<img src="icons/check.svg" width="20" height="20" alt="Success"> ${message}`;
   container.appendChild(toast);
   setTimeout(() => toast.remove(), 3500);
 }
@@ -221,7 +221,7 @@ if (cartContainer) {
       if (cart.length === 0) {
           cartContainer.innerHTML = `
               <div class="empty-state" style="grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: #718096;">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 1rem; color: #cbd5e0;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                  <img src="icons/cart-empty.svg" width="64" height="64" style="margin-bottom: 1rem;" alt="Empty Cart">
                   <h2>Your cart is empty</h2>
                   <p>Looks like you haven't added any food yet.</p>
                   <br>
@@ -357,10 +357,10 @@ if (trackingContent) {
       document.getElementById('noActiveOrder').style.display = 'none';
       
       const statuses = [
-          { id: 'accepted', title: 'Order Accepted', desc: 'The restaurant has confirmed your order.', icon: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' },
-          { id: 'preparing', title: 'Preparing Food', desc: 'Your food is being prepared.', icon: '<path d="m16 16-4-4V8"/><circle cx="12" cy="12" r="10"/>' },
-          { id: 'way', title: 'On the Way', desc: 'Your driver is on the way to you.', icon: '<circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 8v8"/>' },
-          { id: 'delivered', title: 'Delivered', desc: 'Enjoy your food!', icon: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' }
+          { id: 'accepted', title: 'Order Accepted', desc: 'The restaurant has confirmed your order.', icon: 'icons/timeline-accepted.svg' },
+          { id: 'preparing', title: 'Preparing Food', desc: 'Your food is being prepared.', icon: 'icons/timeline-preparing.svg' },
+          { id: 'way', title: 'On the Way', desc: 'Your driver is on the way to you.', icon: 'icons/timeline-way.svg' },
+          { id: 'delivered', title: 'Delivered', desc: 'Enjoy your food!', icon: 'icons/timeline-accepted.svg' }
       ];
 
       
@@ -395,7 +395,7 @@ if (trackingContent) {
               container.innerHTML += `
                   <div class="timeline-item ${isActive ? 'active' : ''} ${isCurrent ? 'current' : ''}">
                       <div class="timeline-icon">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${s.icon}</svg>
+                          <img src="${s.icon}" width="16" height="16" alt="${s.title}">
                       </div>
                       <div class="timeline-content">
                           <div class="timeline-title">${s.title}</div>
